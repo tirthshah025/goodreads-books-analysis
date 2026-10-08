@@ -1,44 +1,138 @@
-# 📚 Goodreads Books Analysis and Recommendation Insights Using Python
+# Goodreads Books Analysis & Recommendation Insights
 
-[![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python&logoColor=white)](https://python.org)
-[![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange?logo=jupyter)](https://jupyter.org)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green)](LICENSE)
-[![Status](https://img.shields.io/badge/Status-Complete-brightgreen)]()
+[![Python](https://img.shields.io/badge/Python-3.11-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-1.39-FF4B4B?logo=streamlit&logoColor=white)](https://streamlit.io/)
+[![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-F37626?logo=jupyter&logoColor=white)](https://jupyter.org/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Status](https://img.shields.io/badge/Status-Portfolio%20Ready-brightgreen)]()
 [![Dataset](https://img.shields.io/badge/Dataset-Goodreads%20Books-purple)]()
 
-> A comprehensive Exploratory Data Analysis (EDA) and visualization project on the Goodreads Books dataset, delivering reader preference insights, author popularity analysis, and publishing trend discoveries.
+<p align="center">
+  <img src="https://img.shields.io/badge/Books-10%2C803-8b5cf6" alt="Books analyzed" />
+  <img src="https://img.shields.io/badge/Visualizations-10-22d3ee" alt="Visualizations" />
+  <img src="https://img.shields.io/badge/Recommendations-TF-IDF%20%2B%20Cosine-34d399" alt="Recommendations" />
+</p>
 
----
+<p align="center">
+  <img src="visualizations/10_top_books_dashboard.png" alt="Goodreads dashboard preview" width="1000" />
+</p>
 
-## 📌 Project Overview
+## Overview
 
-This project analyses **10,803 books** from the Goodreads Books dataset using Python's data science stack. The analysis is split into two phases:
+This project analyzes the Goodreads Books dataset to uncover reader behavior, publishing trends, author performance, and market patterns across a large catalog of books. The work combines exploratory data analysis, custom visual storytelling, and a content-based recommendation engine to create a polished, portfolio-ready analytics experience.
 
-| Phase | Owner | Notebook |
-|---|---|---|
-| **Data Cleaning & Preprocessing** | Tirth Shah | `data_cleaning.ipynb` |
-| **EDA, Visualization & Insights** | Kavish | `analysis.ipynb` |
+The repository includes:
 
-The final output includes **10 professional visualizations**, **15+ key findings**, a detailed project report, and a comprehensive README — forming a complete, submission-ready college project.
+- A structured data-cleaning workflow
+- A premium-quality exploratory notebook
+- Ten publication-ready visualizations
+- An interactive Streamlit dashboard
+- A TF-IDF and cosine similarity recommendation engine
+- A clean GitHub-ready project presentation
 
----
+## Features
 
-## 📂 Folder Structure
+- Data profiling and cleaning on the Goodreads catalog
+- Author, publisher, and language analysis
+- Publication-year trend analysis
+- Ratings vs reviews insight mining
+- Top-book and audience reach analysis
+- Recommendation engine for similar books
+- Streamlit dashboard for interactive exploration
+- Exportable filtered tables and recommendation outputs
 
+## Dashboard Preview
+
+Run the dashboard locally:
+
+```bash
+streamlit run app.py
 ```
+
+The dashboard includes the following sections:
+
+- Home Dashboard
+- Analytics Dashboard
+- Book Explorer
+- Author Explorer
+- Publisher Analytics
+- Language Analytics
+- Recommendation Engine
+
+## Visualizations Gallery
+
+<p align="center">
+  <img src="visualizations/01_rating_distribution.png" alt="Rating distribution" width="900" />
+</p>
+
+<p align="center">
+  <img src="visualizations/02_top_20_highest_rated_books.png" alt="Top rated books" width="900" />
+</p>
+
+<p align="center">
+  <img src="visualizations/03_most_popular_authors.png" alt="Popular authors" width="900" />
+</p>
+
+<p align="center">
+  <img src="visualizations/04_publication_year_trend.png" alt="Publication trend" width="900" />
+</p>
+
+<p align="center">
+  <img src="visualizations/05_language_distribution.png" alt="Language distribution" width="900" />
+</p>
+
+<p align="center">
+  <img src="visualizations/06_ratings_vs_reviews.png" alt="Ratings vs reviews" width="900" />
+</p>
+
+<p align="center">
+  <img src="visualizations/07_correlation_heatmap.png" alt="Correlation heatmap" width="900" />
+</p>
+
+<p align="center">
+  <img src="visualizations/08_publisher_analysis.png" alt="Publisher analysis" width="900" />
+</p>
+
+<p align="center">
+  <img src="visualizations/09_avg_ratings_by_language.png" alt="Average ratings by language" width="900" />
+</p>
+
+<p align="center">
+  <img src="visualizations/10_top_books_dashboard.png" alt="Executive dashboard" width="900" />
+</p>
+
+## Recommendation System
+
+The recommendation system uses a content-based approach built with:
+
+- TF-IDF vectorization over title, author, publisher, and language metadata
+- Cosine similarity scoring between books
+- Top 10 similar-book recommendations based on a selected title
+
+Example:
+
+```python
+from recommendation import get_recommendations
+
+recs = get_recommendations("Harry Potter and the Prisoner of Azkaban", top_n=10)
+print(recs.head())
+```
+
+## Project Structure
+
+```text
 goodreads-books-analysis/
-│
-├── 📓 data_cleaning.ipynb          # Phase 1: Data Cleaning (Tirth Shah)
-├── 📓 analysis.ipynb               # Phase 2: EDA & Visualization (Kavish)
-│
-├── 📄 books.csv                    # Raw Goodreads dataset
-├── 📄 books_cleaned.csv            # Cleaned dataset (used for analysis)
-├── 📄 requirements.txt             # Python dependencies
-│
-├── 📋 README.md                    # This file
-├── 📋 project_report.md            # Full academic project report
-│
-├── 📁 visualizations/              # Generated chart images (PNG)
+├── app.py                          # Streamlit dashboard
+├── recommendation.py              # TF-IDF + cosine similarity engine
+├── analysis.ipynb                 # Exploratory data analysis and visual summaries
+├── data_cleaning.ipynb            # Cleaning and preprocessing notebook
+├── books.csv                      # Raw Goodreads dataset
+├── books_cleaned.csv              # Cleaned analysis dataset
+├── requirements.txt               # Python dependency list
+├── project_report.md              # Detailed project report
+├── project_report.pdf             # Exported academic report
+├── README.md                      # Portfolio documentation
+├── visualizations/                # Generated charts and dashboard images
 │   ├── 01_rating_distribution.png
 │   ├── 02_top_20_highest_rated_books.png
 │   ├── 03_most_popular_authors.png
@@ -49,239 +143,62 @@ goodreads-books-analysis/
 │   ├── 08_publisher_analysis.png
 │   ├── 09_avg_ratings_by_language.png
 │   └── 10_top_books_dashboard.png
-│
-└── 📁 scripts/
-    └── generate_analysis.py        # Standalone script to regenerate charts
+└── archive.zip                    # Legacy backup/archive
 ```
 
----
+## Tech Stack
 
-## 📊 Dataset Description
+- Python 3.11
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- Plotly
+- scikit-learn
+- Streamlit
+- Jupyter Notebook
 
-| Property | Details |
-|---|---|
-| **Source** | Goodreads Books Dataset |
-| **Raw File** | `books.csv` |
-| **Cleaned File** | `books_cleaned.csv` |
-| **Total Records** | 10,803 books |
-| **Features** | 12 columns |
-| **Language** | Primarily English (94%) |
-| **Publication Range** | 1900 – 2020 |
+## Installation
 
-### Columns
-
-| Column | Type | Description |
-|---|---|---|
-| `bookID` | int | Unique book identifier |
-| `title` | str | Book title |
-| `authors` | str | Author name(s) |
-| `average_rating` | float | Average Goodreads rating (0–5) |
-| `isbn` / `isbn13` | str/int | Book identifiers |
-| `language_code` | str | Language of the book |
-| `num_pages` | int | Number of pages |
-| `ratings_count` | int | Total number of ratings received |
-| `text_reviews_count` | int | Number of text reviews |
-| `publication_date` | str | Publication date |
-| `publisher` | str | Publisher name |
-
----
-
-## 🛠️ Technologies Used
-
-| Library | Version | Purpose |
-|---|---|---|
-| `pandas` | 2.x | Data manipulation & analysis |
-| `numpy` | 1.x | Numerical computations |
-| `matplotlib` | 3.x | Core plotting framework |
-| `seaborn` | 0.x | Statistical visualizations |
-| `jupyter` | Latest | Interactive notebook environment |
-
----
-
-## ⚙️ Installation & Setup
-
-### Prerequisites
-- Python 3.9+
-- pip or a virtual environment manager
-
-### 1. Clone the Repository
 ```bash
 git clone https://github.com/tirthshah025/goodreads-books-analysis.git
 cd goodreads-books-analysis
-```
-
-### 2. Create a Virtual Environment
-```bash
-# Windows
-python -m venv .venv
-.venv\Scripts\activate
-
-# macOS / Linux
 python3 -m venv .venv
 source .venv/bin/activate
-```
-
-### 3. Install Dependencies
-```bash
 pip install -r requirements.txt
 ```
 
-### 4. Run the Analysis Notebook
-```bash
-jupyter notebook analysis.ipynb
-```
+## Results
 
-### 5. (Optional) Regenerate All Visualizations
-```bash
-python scripts/generate_analysis.py
-```
+Key insights from the analysis include:
 
----
+- Ratings cluster heavily in the 3.7–4.2 range
+- Major book franchises dominate popularity metrics
+- Popularity and quality are weakly correlated
+- English-language content dominates the catalog
+- Publishing activity peaks in the late 2000s to early 2010s
 
-## 📈 Visualizations
+## Team Contributions
 
-All charts use a consistent **dark Catppuccin Mocha** design theme for a premium, publication-ready aesthetic.
+### Tirth Shah
+- Data cleaning
+- Dataset preparation
+- Preprocessing
+- Data validation
 
-### 1. Rating Distribution Histogram
-> Shows how average ratings are distributed across all 10,803 books.
-- Peak: 3.7 – 4.2 range
-- Mean ≈ Median ≈ 3.93 (slightly left-skewed)
+### Kavish
+- Exploratory analysis
+- Visualization design
+- Dashboard development
+- Recommendation engine
 
-![Rating Distribution](visualizations/01_rating_distribution.png)
+## Acknowledgements
 
----
-
-### 2. Top 20 Highest Rated Books
-> Books with ≥1,000 ratings ranked by average rating.
-- **The Complete Calvin and Hobbes** tops at 4.82
-- Harry Potter collections and manga dominate
-
-![Top 20 Rated Books](visualizations/02_top_20_highest_rated_books.png)
+This project is built on the Goodreads Books dataset and designed as a practical analytics portfolio project for data exploration, visual communication, and machine learning-driven recommendations.
 
 ---
 
-### 3. Most Popular Authors
-> Authors ranked by total ratings count across all their books.
-- **J.K. Rowling** leads by a wide margin
-- Franchise authors dominate popularity metrics
-
-![Popular Authors](visualizations/03_most_popular_authors.png)
-
----
-
-### 4. Publication Year Trend
-> Dual-axis chart showing book count and average rating by year (1950–2024).
-- Peak publishing activity: 2005–2010
-- Older books exhibit survivorship-bias-driven higher ratings
-
-![Publication Trend](visualizations/04_publication_year_trend.png)
-
----
-
-### 5. Language Distribution
-> Pie + bar chart showing book counts by language.
-- 94%+ English-language books
-- Spanish, French, German are next
-
-![Language Distribution](visualizations/05_language_distribution.png)
-
----
-
-### 6. Ratings vs Reviews Scatter Plot
-> Log-scale scatter coloured by average rating with trend line.
-- Pearson r ≈ 0.866 (very strong correlation)
-- Popular books receive more reviews proportionally
-
-![Ratings vs Reviews](visualizations/06_ratings_vs_reviews.png)
-
----
-
-### 7. Correlation Heatmap
-> Pearson correlation matrix of all four numeric features.
-- ratings_count ↔ text_reviews_count: **+0.866**
-- average_rating ↔ ratings_count: **+0.038** (popularity ≠ quality)
-
-![Correlation Heatmap](visualizations/07_correlation_heatmap.png)
-
----
-
-### 8. Publisher Analysis
-> Dual chart: top publishers by volume + their average ratings.
-- **Vintage** (310 books) leads by volume
-- **Penguin Classics** leads in quality among top publishers
-
-![Publisher Analysis](visualizations/08_publisher_analysis.png)
-
----
-
-### 9. Average Ratings by Language
-> Comparing average ratings across languages (≥5 books, >100 ratings).
-- Ancient language books (Greek, Latin) rate highest — survivorship bias
-- Japanese manga/literature: ~4.10+
-
-![Avg Ratings by Language](visualizations/09_avg_ratings_by_language.png)
-
----
-
-### 10. Dashboard Summary
-> Executive dashboard with KPI tiles, mini-charts, and key metrics.
-
-![Dashboard Summary](visualizations/10_top_books_dashboard.png)
-
----
-
-## 🔍 Key Findings
-
-| # | Finding |
-|---|---|
-| 1 | Ratings cluster between 3.7–4.2; median is 3.96 — readers rarely give extremes |
-| 2 | Complete series & box-sets receive the highest ratings (Calvin & Hobbes: 4.82, HP box-set: 4.78) |
-| 3 | Book length correlates weakly but positively with rating (r = +0.15) |
-| 4 | **Twilight** has the highest individual ratings count: 4,597,666 |
-| 5 | **J.K. Rowling** is the #1 most-rated author by total engagement |
-| 6 | Popularity (ratings count) does NOT predict quality (r = +0.038 with average rating) |
-| 7 | Ratings count and text reviews share the strongest relationship in the dataset (r = 0.866) |
-| 8 | Publication volume peaked around 2005–2010, coinciding with digital publishing growth |
-| 9 | 94%+ of books are English — a major multilingual representation gap |
-| 10 | Vintage and Penguin Books are the two most prolific publishers |
-| 11 | Older surviving books rate higher — classic survivorship bias at work |
-| 12 | Penguin Classics achieves the best quality-to-volume ratio among major publishers |
-| 13 | Manga readers leave proportionally more text reviews than any other genre group |
-| 14 | P.G. Wodehouse and Agatha Christie have the most individual titles listed (31–39 each) |
-| 15 | Bill Watterson achieves the highest per-book average rating across multiple titles |
-
----
-
-## 📋 Results Summary
-
-| Metric | Value |
-|---|---|
-| Total Books Analysed | 10,803 |
-| Average Rating | 3.93 |
-| Most Popular Book | Twilight (4.59M ratings) |
-| Highest Rated Book | The Complete Calvin and Hobbes (4.82) |
-| Most Popular Author | J.K. Rowling |
-| Most Prolific Publisher | Vintage (310 books) |
-| Languages Represented | 27 |
-| English Language Share | ~94% |
-| Average Pages per Book | 337 |
-| Strongest Correlation | ratings_count ↔ text_reviews (r = 0.866) |
-
----
-
-## 👥 Contributors
-
-| Name | Role | Contribution |
-|---|---|---|
-| **Tirth Shah** | Data Engineer | Data Cleaning, Missing Value Handling, Duplicate Removal, Preprocessing (`data_cleaning.ipynb`) |
-| **Kavish** | Data Analyst | EDA, All 10 Visualizations, Key Findings, Project Report, README (`analysis.ipynb`) |
-
----
-
-## 📝 License
-
-This project is for educational purposes. Dataset sourced from the publicly available Goodreads Books dataset on Kaggle.
-
----
-
-*Made with Python, Matplotlib & Seaborn | Goodreads Books Dataset*
+<p align="center">
+  <strong>Goodreads Insight Lab</strong><br>
+  A data storytelling project for modern book analytics and personalization.
+</p>
