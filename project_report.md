@@ -11,7 +11,9 @@
 |---|---|
 | **Project Title** | Goodreads Books Analysis and Recommendation Insights Using Python |
 | **Repository** | https://github.com/tirthshah025/goodreads-books-analysis |
-| **Contributors** | **Tirth Shah** (Data Cleaning & Verification) &bull; **Kavish Patel** (EDA & Visualization) |
+| **Team Structure** | **Tirth Shah** &bull; **Kavish Patel** |
+| **Tirth Shah** | Phase 1: Data Ingestion, Preprocessing, Data Cleaning and Verification |
+| **Kavish Patel** | Phase 2: Exploratory Data Analysis, Statistical Visualizations, Business Insights and Recommendation Analysis |
 | **Dataset** | Goodreads Books Dataset — 10,803 cleaned records, 12 features |
 | **Language & Environment** | Python 3.11, pandas, NumPy, Matplotlib, Seaborn, scikit-learn, Streamlit |
 | **Status** | Complete & Verified |
@@ -223,8 +225,19 @@ The Streamlit app (`app.py`) follows a restrained academic layout:
 
 ## 11. Team Contributions
 
-- **Tirth Shah:** Phase 1 Data Cleaning & Engineering, parsing anomaly resolution, whitespace stripping, date standardization, review count consistency enforcement, 6/6 automated test assertions, and dataset export (`books_cleaned.csv`).
-- **Kavish Patel:** Phase 2 Exploratory Data Analysis, statistical hypothesis formulation, academic visualization design, insight extraction, and documentation.
+- **Tirth Shah — Phase 1: Data Ingestion, Preprocessing, Data Cleaning and Verification:**
+  - Designed the ingestion pipeline handling delimiter-shifted malformed lines (`on_bad_lines='skip'`).
+  - Audited schema, stripped whitespace in headers (e.g., `'  num_pages'`), and standardized ISO publication dates.
+  - Resolved invalid calendar dates (e.g., non-existent calendar days) and enforced relational consistency (`text_reviews_count <= ratings_count`).
+  - Implemented an automated suite of 6 programmatic assertion tests verifying zero nulls, rating bounds, positive page counts, relational validity, unique primary keys, and date formatting.
+  - Exported the canonical, verified `books_cleaned.csv` dataset.
+
+- **Kavish Patel — Phase 2: Exploratory Data Analysis, Statistical Visualizations, Business Insights and Recommendation Analysis:**
+  - Conducted exploratory statistical analysis across univariate, bivariate, and grouping dimensions.
+  - Formulated and empirically tested research hypotheses regarding rating dynamics and the independence of popularity vs. quality.
+  - Designed and generated the academic visualization suite, removing excessive heatmaps and unsupported composite charts following faculty guidance.
+  - Formulated strategic business insights and designed the content-based recommendation framework.
+
 - **Joint Collaboration:** Streamlit dashboard architecture (`app.py`), recommendation engine optimization (`recommendation.py`), and final project reporting.
 
 ---
